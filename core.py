@@ -10,8 +10,11 @@ bot = telebot.TeleBot(telegram_api_key)
 
 @bot.message_handler(commands=['ow'])
 def start_message(message):
-    bot.send_message(message.chat.id, 'Го в Overwatch! @MoshWayne @molotoko @mikmall @HKEY47 @fyvdlo @Valion @bddah '
-                                      '@Milli_M @B1oodB1ade @S1aaneesh')
+    bot.send_message(
+        message.chat.id,
+        'Го в Overwatch! @MoshWayne @mikmall @molotoko @HKEY47 @fyvdlo @Milli_M @Valion @bddah @Milli_M @B1oodB1ade @S1aaneesh',
+        parse_mode='Markdown',
+    )
 
 
 bot.polling()
