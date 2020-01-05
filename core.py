@@ -12,8 +12,7 @@ bot = telebot.TeleBot(telegram_api_key)
 def start_message(message):
     bot.send_message(
         message.chat.id,
-        'Го в Overwatch! @MoshWayne @mikmall @molotoko @Milli_M @Valion @HKEY47 @fyvdlo @bddah @B1oodB1ade @S1aaneesh',
-        parse_mode='Markdown',
+        'Го в Overwatch! @MoshWayne @mikmall @molotoko @Milli_M @Valion @HKEY47 @fyvdlo @bddah @B1oodB1ade @S1aaneesh'
     )
 
 
