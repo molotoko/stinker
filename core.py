@@ -8,7 +8,7 @@ from config import telegram_api_key
 bot = telebot.TeleBot(telegram_api_key)
 
 
-@bot.message_handler(commands=['ow'])
+@bot.message_handler(commands=['ow123'])
 def start_message(message):
     bot.send_message(
         message.chat.id,
