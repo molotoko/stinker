@@ -11,8 +11,8 @@ jekpot_id = 809456
 
 @bot.message_handler(commands=['ow'])
 def call_overwatchers(message):
-    user_id = message.from_user.id
-    if user_id != jekpot_id:
+    caller_id = message.from_user.id
+    if caller_id != jekpot_id:
         chat_id = message.chat.id
         # testers = [60383050, 162165102]
         ow_caller = f'Го в Overwatch! Призываю '
@@ -41,8 +41,8 @@ def extract_arg(arg):
 
 @bot.message_handler(commands=['page'])
 def add_page(message):
-    user_id = message.from_user.id
-    if user_id != jekpot_id:
+    caller_id = message.from_user.id
+    if caller_id != jekpot_id:
         query_pages_text = extract_arg(message.text)
         query_pages = []
         for page in query_pages_text:
