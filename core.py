@@ -1,4 +1,5 @@
 import telebot
+from telebot.apihelper import ApiException
 
 import json
 
@@ -18,9 +19,12 @@ def call_overwatchers(message):
         ow_caller = f'Го в Overwatch! Призываю '
         overwatchers = [60383050, 162165102, 123085544, 37718983, 224502157, 144235785, 145375898, 246713426, 658658324]
         for user_id in overwatchers:
-            user_info = bot.get_chat_member(chat_id, user_id).__dict__
-            username = user_info['user'].__dict__['username']
-            ow_caller += f'@{username} '
+            try:
+                user_info = bot.get_chat_member(chat_id, user_id).__dict__
+                username = user_info['user'].__dict__['username']
+                ow_caller += f'@{username} '
+            except ApiException:
+                pass
 
         bot.send_message(
             chat_id,
