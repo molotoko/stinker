@@ -25,17 +25,15 @@ def call_overwatchers(message):
                 ow_caller += f'@{username} '
             except ApiException:
                 pass
-
         bot.send_message(
-            chat_id,
-            ow_caller,
-            parse_mode='Markdown'
-        )
+                        chat_id,
+                        ow_caller
+                    )
     else:
         bot.send_message(
             message.chat.id,
-            f'Sorry, you cannot do it.',
-            parse_mode='Markdown'
+            'Sorry, you cannot do it.',
+            reply_to_message_id=message.message_id
         )
 
 
