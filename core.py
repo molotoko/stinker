@@ -8,6 +8,8 @@ from config import telegram_api_key
 
 bot = telebot.TeleBot(telegram_api_key)
 jekpot_id = 809456
+testers = [60383050, 162165102]
+overwatchers = [60383050, 162165102, 123085544, 37718983, 224502157, 144235785, 145375898, 246713426, 658658324]
 
 
 @bot.message_handler(commands=['ow'])
@@ -15,20 +17,21 @@ def call_overwatchers(message):
     caller_id = message.from_user.id
     if caller_id != jekpot_id:
         chat_id = message.chat.id
-        # testers = [60383050, 162165102]
-        ow_caller = f'Го в Overwatch! Призываю '
-        overwatchers = [60383050, 162165102, 123085544, 37718983, 224502157, 144235785, 145375898, 246713426, 658658324]
-        for user_id in overwatchers:
-            try:
-                user_info = bot.get_chat_member(chat_id, user_id).__dict__
-                username = user_info['user'].__dict__['username']
-                ow_caller += f'@{username} '
-            except ApiException:
-                pass
+        first_message = 'Го в Overwatch! Призываю @molotoko @mikmall @S1aaneesh @fyvdlo'
+        second_message = 'Также в Overwatch призываются @B1oodB1ade @Valion @nogpyra @bddah'
+        third_message = 'Погнали гореть в Overwatch! @Milli_M @MoshWayne @sslippe @OctLeaf'
         bot.send_message(
-                        chat_id,
-                        ow_caller
-                    )
+            chat_id,
+            first_message
+        )
+        bot.send_message(
+            chat_id,
+            second_message
+        )
+        bot.send_message(
+            chat_id,
+            third_message
+        )
     else:
         bot.send_message(
             message.chat.id,
@@ -86,9 +89,10 @@ def all_pages(message):
     with open('data.txt', 'r') as data_file:
         data_dict = json.load(data_file)
         read_pages = sorted(data_dict['pages'])
+        tmp_msg = f'Lizavetka has already read pages: {read_pages}.'
         bot.send_message(
             message.chat.id,
-            f'Lizavetka has already read pages: {read_pages}.',
+            'Sorry, this command is not working.',
             parse_mode='Markdown'
         )
 
