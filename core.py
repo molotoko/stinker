@@ -19,7 +19,7 @@ def call_overwatchers(message):
         chat_id = message.chat.id
         first_message = 'Го в Overwatch! Призываю @molotoko @mikmall @S1aaneesh @fyvdlo'
         second_message = 'Также в Overwatch призываются @B1oodB1ade @Valion @nogpyra @bddah'
-        third_message = 'Погнали гореть в Overwatch! @Milli_M @MoshWayne @sslippe @OctLeaf'
+        third_message = 'Погнали гореть в Overwatch! @kokos_89 @MoshWayne @sslippe @OctLeaf @Milli_M'
         bot.send_message(
             chat_id,
             first_message
