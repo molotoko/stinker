@@ -40,6 +40,16 @@ def call_overwatchers(message):
         )
 
 
+@bot.message_handler(commands=['dota'])
+def call_doters(message):
+    chat_id = message.chat.id
+    message = '@wilddeer @JekPot @Milli_M @Ap4u121 go zaebali'
+    bot.send_message(
+        chat_id,
+        message
+    )
+
+
 def extract_arg(arg):
     return arg.split()[1:]
 
