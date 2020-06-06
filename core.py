@@ -43,7 +43,7 @@ def call_overwatchers(message):
 @bot.message_handler(commands=['dota'])
 def call_doters(message):
     chat_id = message.chat.id
-    message = '@wilddeer @JekPot @Milli_M @Ap4u121 @nogpyra go zaebali'
+    message = '@wilddeer @JekPot @Milli_M @Ap4u121 @nogpyra @sslippe go zaebali'
     bot.send_message(
         chat_id,
         message
